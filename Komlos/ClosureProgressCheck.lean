@@ -1,0 +1,45 @@
+import Mathlib
+import Komlos
+
+/-!
+# Independent axiom checks for the linear-regularity infrastructure
+
+This target verifies the analytic infrastructure of the 2026-09-18 closure work (the linear
+Schauder/Campanato/Weyl route and the difference-quotient toolbox) independently of the
+endpoint gate. Passing it does not certify the main Komlós theorem; the acceptance gate is
+`lake build Komlos.AxiomCheck`.
+
+The two assertions about `Komlos.Literature.Korevaar.eq_of_isMaxOn_of_weakSubsolution` and
+`eventually_concavityFn_lt_of_hopf_ratios` were dropped by lane `L7`: they lived in
+`PLaplacian/KorevaarSMP.lean`, which was deleted together with the rest of the degenerate
+concavity chain (see `Komlos/Literature/Regularized/NOTES_integrate.md`).
+-/
+
+assert_no_sorry Komlos.Literature.exists_contDiffOn_ae_eq_gradient_of_weakSolution
+assert_no_sorry Komlos.Literature.campanato_iteration_constants
+assert_no_sorry Komlos.Literature.exists_holder_of_campanato_scaled
+assert_no_sorry Komlos.Literature.exists_scaled_holder_of_perturbed_decay
+assert_no_sorry Komlos.Literature.exists_interior_gradient_holder_scaled
+assert_no_sorry Komlos.Literature.exists_uniform_interior_gradient_bound
+assert_no_sorry Komlos.Literature.exists_frozen_smooth_replacement_on_ball
+assert_no_sorry Komlos.Literature.exists_frozen_comparison_of_gradient_bound
+assert_no_sorry Komlos.Literature.exists_perturbed_sqExcess_decay_of_gradient_bound
+assert_no_sorry Komlos.Literature.exists_frozen_replacement_data
+assert_no_sorry Komlos.Literature.exists_frozen_comparison
+assert_no_sorry Komlos.Literature.exists_perturbed_sqExcess_decay
+assert_no_sorry Komlos.Literature.Korevaar.inner_hessian_pair_le_of_isLocalMax
+assert_no_sorry Komlos.Literature.Korevaar.hessian_rigidity_of_pair_le_of_diagonal_eq
+assert_no_sorry Komlos.Literature.Korevaar.concavityFn_nonpos_of_isLocalMax_of_affine_reaction
+assert_no_sorry Komlos.Literature.Korevaar.concavityFn_nonpos_of_isLocalMax_of_strict_reaction
+assert_no_sorry Komlos.Literature.Korevaar.hessian_rigidity_of_isLocalMax_of_equation
+assert_no_sorry Komlos.Literature.IsFluxSolutionOn.integral_inner_weakGrad
+assert_no_sorry Komlos.Literature.IsFluxSolutionOn.integral_inner_diffQuot_flux_cutoff_zero
+assert_no_sorry Komlos.Literature.integrable_diffQuot_flux_energy
+assert_no_sorry Komlos.Literature.integrable_weighted_diffQuot_energy
+assert_no_sorry Komlos.Literature.IsFluxSolutionOn.integrableOn_diffQuot_energies
+assert_no_sorry Komlos.Literature.IsFluxSolutionOn.integral_diffQuot_flux_energy_balance
+assert_no_sorry Komlos.Literature.weighted_quadratic_young
+
+#print axioms Komlos.Literature.exists_interior_gradient_holder_scaled
+#print axioms Komlos.Literature.exists_frozen_replacement_data
+#print axioms Komlos.Literature.IsFluxSolutionOn.integral_inner_diffQuot_flux_cutoff_zero

@@ -1,0 +1,19 @@
+# build artifacts
+.lake/
+*.olean
+.DS_Store
+
+# agent / cluster working files
+.claude/
+.claude-session.log
+.fanout-prompt.md
+slurm-logs/
+CLAUDE.md
+
+# everything that is not the Lean library: planning notes, ledgers, references, scripts
+*.md
+!README.md
+ref/
+scripts/
+verification/
+notes/
