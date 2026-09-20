@@ -37,15 +37,6 @@ combinations, Proposition A.1) builds on
 - N. Korevaar, *Convex solutions to nonlinear elliptic and parabolic boundary value problems*,
   1983 (the concavity maximum principle).
 
-**One deviation from the paper.** The paper proves Proposition A.1 by citing regularity and
-log-concavity results for the *degenerate* anisotropic $p$-Laplace eigenfunctions (Mosconi–Riey–
-Squassina, 2024). Those literature inputs are *not* assumed and *not* formalized here. Instead,
-the same two arguments (Korevaar's concavity principle and Wang–Xia's infimal convolution) are
-run on a smooth, uniformly elliptic, entropy-regularized problem at exponent $2$, for which all
-the needed analysis is classical and is proved in this repository — the direct method,
-uniqueness, De Giorgi–Nash–Moser estimates, positivity, interior $C^2$ regularity
-(Campanato + Schauder), and the Prékopa–Leindler inequality — and only the *scalar* minima are
-passed to the limit. The statement of Proposition A.1 is unchanged; nothing is assumed.
 
 ## Where the main theorem is
 
